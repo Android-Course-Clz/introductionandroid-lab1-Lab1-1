@@ -55,6 +55,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:layout_marginStart="4dp"
+            android:padding="4dp"
             tools:text="0"
             android:textSize="14sp" />
 
