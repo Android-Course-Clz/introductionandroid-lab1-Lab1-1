@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SocialNetworkProfile</string>
+    <string name="EnterCommentHint">Введите комментарий</string>
+    <string name="Enter">Опубликовать</string>
+    <string name="SubscribeButtonText">Подписаться</string>
+    <string name="WriteMessageText">Написать собщение</string>
+    <string name="Posts">Посты</string>
+    <string name="Followers">Подписчики</string>
+    <string name="Following">Подписки</string>
+    <string name="Subscribed">Подписан</string>
+</resources>
