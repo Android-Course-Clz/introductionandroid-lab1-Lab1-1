@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="@color/grey"/>
 
     <TextView
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/postImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:id="@+id/likesCount"
