@@ -3,11 +3,13 @@ package com.eruano.lab1
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.eruano.lab1.models.Post
+import java.util.Locale
 
 class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
@@ -21,12 +23,18 @@ class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostA
         holder.postTitle.text = post.title
         holder.postContent.text = post.content
         holder.postDate.text = post.date
+        holder.likeCount.text = String.format(locale = null,"%d", post.likeCount)
 
         Glide.with(holder.itemView.context)
             .load(post.contentUrl)
             .placeholder(R.drawable.placeholder_image)
             .error(R.drawable.error_image)
             .into(holder.postImage)
+
+        holder.likeBtn.setOnClickListener {
+            post.likeCount++
+            holder.likeCount.text = String.format(locale = null, "%d", post.likeCount)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -38,5 +46,7 @@ class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostA
         val postTitle: TextView = itemView.findViewById(R.id.postTitle)
         val postContent: TextView = itemView.findViewById(R.id.postContent)
         val postDate: TextView = itemView.findViewById(R.id.postDate)
+        val likeBtn: ImageButton = itemView.findViewById(R.id.likeBtn)
+        val likeCount: TextView = itemView.findViewById(R.id.likeCount)
     }
 }
