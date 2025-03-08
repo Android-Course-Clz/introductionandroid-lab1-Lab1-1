@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">user-profile</string>
+    <string name="subscribers_count">%d подписчиков</string>
+    <string name="subscribed_count">%d подписок</string>
+    <string name="posts_count">%d публикаций</string>
+    <string name="comments_count">%d комментариев</string>
+    <string name="example_username">"@username"</string>
+    <string name="example_first_name">Имя</string>
+    <string name="example_last_name">Фамилия</string>
+    <string name="example_subscribers_count">255 подписчиков</string>
+    <string name="example_subscribed_count">10 подписок</string>
+    <string name="example_posts_count">10 постов</string>
+    <string name="users_avatar_image">Users avatar image</string>
+    <string name="subscribe_button">Подписаться</string>
+    <string name="unsubscribe_button">Отписаться</string>
+    <string name="message_button">Написать сообщение</string>
+    <string name="example_likes_count">100</string>
+    <string name="example_comment_count">5 комментариев</string>
+    <string name="like_btn_description">кнопка лайка</string>
+    <string name="to_comment">Комментировать</string>
+    <string name="post_description">Описание поста</string>
+    <string name="post_image_description">Изображение поста</string>
+    <string name="send_button_text">Отправить</string>
+    <string name="edit_message_text">Введите сообщение</string>
+    <string name="message_window_title">Написать сообщение</string>
+    <string name="comment_window_title">Оставить комментарий</string>
+</resources>
