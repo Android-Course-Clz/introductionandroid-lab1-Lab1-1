@@ -3,4 +3,9 @@
     <string name="app_greetings">Hello, World</string>
 
     <string name="colleague_greetings">Hello, Colleagues</string>
+    <string name="subscribeButtonText">Подписаться</string>
+    <string name="subscribedButtonText">Подписан</string>
+    <string name="write_message_button">Cообщение</string>
+    <string name="showPosts">Показать посты</string>
+    <string name="hidePosts">Спрятать посты</string>
 </resources>

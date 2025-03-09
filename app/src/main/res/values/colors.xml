@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="general_background">#0a0a0a</color>
+    <color name="item_background">#191919</color>
+    <color name="subscribe_button">#454648</color>
+    <color name="commentBackground">#232323</color>
+    <color name="first_priority_text">#e4e5e7</color>
+    <color name="second_priority_text">#c1c2c4</color>
+    <color name="third_priority_text">#797979</color>
 </resources>

@@ -1,18 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/general_background"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/greetings"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/backgroundImageLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@color/purple_200"
-        android:text="@string/app_greetings" />
+        android:background="@color/item_background"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="-25dp">
+        <!-- Background Image-->
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:background="@drawable/background_round_corners"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="0dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="25dp"
+        android:layout_marginBottom="15dp">
 
+        <!-- Profile Header -->
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/comment_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"/>
+
+        <!-- Post Layout -->
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:textAlignment="center"
+            android:fontFamily="@font/my_custom_font"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="Петя Пупкин"
+            app:layout_constraintTop_toBottomOf="@+id/profilePicture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/userStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:textAlignment="center"
+            android:fontFamily="@font/my_custom_font"
+            android:textSize="17sp"
+            android:text="Жизнь хороша и жить хорошо"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/userInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/third_priority_text"
+            android:textAlignment="center"
+            android:fontFamily="@font/my_custom_font"
+            android:textSize="17sp"
+            android:text="Зеленоград"
+            app:layout_constraintTop_toBottomOf="@+id/userStatus"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="15dp" />
+
+
+        <Button
+            android:id="@+id/subscribeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/subscribe_button"
+            android:fontFamily="@font/my_custom_font"
+            android:textSize="15sp"
+            android:text="@string/subscribeButtonText"
+            android:textColor="@color/first_priority_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userInfo"
+            android:layout_marginTop="30dp" />
+
+        <Button
+            android:id="@+id/message_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/subscribe_button"
+            android:fontFamily="@font/my_custom_font"
+            android:textSize="15sp"
+            android:text="@string/write_message_button"
+            android:textColor="@color/first_priority_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/subscribeButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/friendsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_round_corners"
+        android:padding="25dp"
+        android:layout_marginBottom="15dp">
+        <TextView
+            android:id="@+id/amountOfFriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:text="175 друзей"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/friends_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/third_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:text="Семён Семёныч, Пётр Петрович"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/amountOfFriends"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_round_corners"
+        android:paddingTop="30dp">
+
+
+        <TextView
+            android:id="@+id/amountOfPosts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/third_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:text="3 поста"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingLeft="35dp"
+            android:paddingBottom="35dp"/>
+
+        <Button
+            android:id="@+id/showPostsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/subscribe_button"
+            android:fontFamily="@font/my_custom_font"
+            android:textSize="15sp"
+            android:text="@string/showPosts"
+            android:textColor="@color/first_priority_text"
+            app:layout_constraintStart_toEndOf="@+id/amountOfPosts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/item_background"
+            tools:listitem="@layout/posts_list"
+            app:layout_constraintTop_toBottomOf="@+id/amountOfPosts"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
