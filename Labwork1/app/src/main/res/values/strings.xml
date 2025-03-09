@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Labwork1</string>
+    <string name="app_greetings">Hello, world!</string>
+
+    <string name="username">Сергей Бородавко</string>
+    <string name="nickname">\@pochtineploho</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="subscriptions">Подписки</string>
+    <string name="followers">Подписчики</string>
+    <string name="posts">Посты</string>
+    <string name="postsNumber">0</string>
+    <string name="followersNumber">68</string>
+    <string name="subscriptionsNumber">366</string>
+    <string name="message_button">Написать сообщение</string>
+    <string name="subscribe_button">Подписаться</string>
+    <string name="likes_icon">Поставить лайк</string>
+    <string name="comments_icon">Оставить комментарий</string>
+    <string name="_0">0</string>
+    <string name="postImage">Изображение</string>
+    <string name="enterComment">Введите ваш комментарий</string>
+</resources>
