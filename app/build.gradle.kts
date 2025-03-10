@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "ru.SAHEKg.lab1"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ru.SAHEKg.lab1"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -36,7 +36,9 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
