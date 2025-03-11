@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Profile</string>
+    <string name="user_name">Mr. Kris</string>
+    <string name="user_tag">"@MrKris"</string>
+    <integer name="followers_number">100</integer>
+    <string name="followers">Followers</string>
+    <integer name="following_number">333</integer>
+    <string name="following">Following</string>
+    <string name="post_text">ляляля</string>
+    <string name="picture_url">https://i.pinimg.com/736x/be/87/d1/be87d19f96288aac967392b948f78d48.jpg</string>
+    <integer name="likes_number">100</integer>
+    <integer name="comment_number">100</integer>
+</resources>
+
+
+
