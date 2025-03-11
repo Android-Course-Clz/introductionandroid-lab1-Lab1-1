@@ -1,0 +1,126 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:background="#1A1A21"
+    android:padding="8dp">
+
+
+    <ImageButton
+        android:id="@+id/postButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/post2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="206dp" />
+
+
+    <ToggleButton
+        android:id="@+id/likeButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/like_selector"
+        android:scaleType="fitCenter"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <LinearLayout
+        android:id="@+id/commentsContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/commentField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/postButton"
+        app:layout_constraintTop_toBottomOf="@+id/contentPost">
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/commentField"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/comments"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:textColor="@android:color/transparent"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/postButton"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/displayTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginBottom="5dp"
+        android:maxLength="20"
+        android:singleLine="false"
+        android:text=""
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/commentsContainer"
+        app:layout_constraintEnd_toEndOf="@+id/commentsContainer"
+        app:layout_constraintStart_toStartOf="@+id/commentsContainer" />
+
+    <TextView
+        android:id="@+id/commentCountTextView"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/commentField"
+        app:layout_constraintStart_toEndOf="@+id/commentField" />
+
+    <TextView
+        android:id="@+id/likeCountTextView"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/likeButton"
+        app:layout_constraintStart_toEndOf="@+id/likeButton" />
+
+    <TextView
+        android:id="@+id/contentPost"
+        android:layout_width="189dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="4dp"
+        android:text=""
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/postButton"
+        app:layout_constraintTop_toTopOf="@+id/postButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
