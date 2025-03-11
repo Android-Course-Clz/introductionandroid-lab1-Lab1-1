@@ -1,4 +1,5 @@
 ![screen.png](screen.png)
+![screen2.png](screen2.png)
 
 # **Лабораторная работа №1**  
 **Тема:** Верстка и UI в Android  
