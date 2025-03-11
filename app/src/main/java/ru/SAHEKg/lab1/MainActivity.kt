@@ -3,6 +3,7 @@ package ru.SAHEKg.lab1
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -35,10 +36,15 @@ class MainActivity : AppCompatActivity() {
             buttonFollow.text = if (isFollowing) "Вы подписаны" else "Подписаться"
         }
 
+        val buttonMessage: Button = findViewById(R.id.buttonMessage)
+        buttonMessage.setOnClickListener {
+            Toast.makeText(this, "Я тебе запрещаю мне писать", Toast.LENGTH_SHORT).show()
+        }
+
         val posts: RecyclerView = findViewById(R.id.post_list)
         val postData = listOf(
-            Post(avatarLink, "Имя пользователя", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_W3DROWqNiuGJJDf0cPFdj4lkY849DMe33g&s", "Контент первого поста"),
-            Post(avatarLink, "Имя пользователя", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5oR3qCK7IunWEEH9zLaSbWesbrdeeiYoarA&s", "Контент второго поста")
+            Post(1 , avatarLink, "Имя пользователя", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_W3DROWqNiuGJJDf0cPFdj4lkY849DMe33g&s", "Контент первого поста"),
+            Post(2, avatarLink, "Имя пользователя", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5oR3qCK7IunWEEH9zLaSbWesbrdeeiYoarA&s", "Контент второго поста")
         )
         posts.layoutManager = LinearLayoutManager(this)
         posts.adapter = PostAdapter(postData)
