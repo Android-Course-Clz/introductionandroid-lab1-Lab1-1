@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">lab1-KonstantinFrantz</string>
+
+    <string name="profile_name">Tonald Drump</string>
+    <string name="profile_nickname">\@realTonaldDrump</string>
+    <string name="profile_followers">158,5M</string>
+    <string name="profile_following">512</string>
+    <string name="profile_avatar">Profile avatar</string>
+    <string name="header_background">Header background</string>
+
+    <string name="btn_follow">Follow</string>
+    <string name="btn_unfollow">Unfollow</string>
+    <string name="btn_show_other_posts">Show other posts</string>
+
+    <string name="toast_message">Message sent</string>
+    <string name="toast_comment">Commented</string>
+    <string name="message_button">Message button</string>
+    
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="posts">posts</string>
+    <string name="post_avatar">Post avatar</string>
+    <string name="post_image">Post image</string>
+</resources>
