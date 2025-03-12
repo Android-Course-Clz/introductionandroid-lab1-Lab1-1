@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">VK</string>
+    <string name="user_name">Андрей Рыбин</string>
+    <string name="nickname">Rubin</string>
+    <string name="friend_label">Друзей:</string>
+    <string name="record_label">Записей:</string>
+    <string name="message_button">Сообщение</string>
+    <string name="friend_button">Добавить в друзья</string>
+    <string name="friends_count">507</string>
+    <string name="records_count">3</string>
+    <string name="post_text">"It's simple text of post"</string>
+</resources>
