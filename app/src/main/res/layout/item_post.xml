@@ -46,7 +46,7 @@
         android:background="@null"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/like"
-        android:src="@drawable/like_black_icon"
+        android:src="@drawable/like_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/postImage" />
 
