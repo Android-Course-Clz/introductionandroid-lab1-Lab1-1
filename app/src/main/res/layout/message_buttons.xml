@@ -17,12 +17,11 @@
         android:layout_height="wrap_content"
         android:padding="6dp">
 
-        <!-- Кнопка "Подписаться" -->
         <Button
             android:id="@+id/btnSubscribe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Подписаться"
+            android:text="@string/subscribe"
             android:backgroundTint="@color/blue"
             android:textColor="@android:color/white"
             android:textAllCaps="false"
@@ -32,12 +31,11 @@
             app:layout_constraintWidth_percent="0.48"
             android:layout_marginEnd="8dp"/>
 
-        <!-- Кнопка "Написать сообщение" -->
         <Button
             android:id="@+id/btnMessage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Написать сообщение"
+            android:text="@string/write"
             android:backgroundTint="@color/blue"
             android:textColor="@android:color/white"
             android:textAllCaps="false"

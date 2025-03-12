@@ -29,8 +29,8 @@ class MainActivity : ComponentActivity() {
 
         Glide.with(profileImage)
             .load(imageUrl)
-            .placeholder(R.drawable.profile_placeholder)
-            .error(R.drawable.error_placeholder)
+            .placeholder(R.drawable.loading_icon)
+            .error(R.drawable.error_icon)
             .into(profileImage)
 
 

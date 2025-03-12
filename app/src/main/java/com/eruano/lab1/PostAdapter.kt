@@ -26,8 +26,8 @@ class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostA
 
         Glide.with(holder.itemView.context)
             .load(post.contentUrl)
-            .placeholder(R.drawable.placeholder_image)
-            .error(R.drawable.error_image)
+            .placeholder(R.drawable.loading_icon)
+            .error(R.drawable.error_icon)
             .into(holder.postImage)
 
         holder.likeBtn.setOnClickListener {
