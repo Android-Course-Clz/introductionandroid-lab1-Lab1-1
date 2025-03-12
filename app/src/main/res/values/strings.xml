@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">lab-1</string>
+    <string name="subscribe_button">Subscribe button</string>
+    <string name="messsage_button">Messsage Button</string>
+    <string name="user_name">User name</string>
+    <string name="username">Username</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="profile_stats">Profile stats</string>
+    <string name="like_button">Like button</string>
+    <string name="comment_button">Comment button</string>
+    <string name="post_image">Post image</string>
+    <string name="comment_input_hint">Напишите комментарий</string>
+</resources>
