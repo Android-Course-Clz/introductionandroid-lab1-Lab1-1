@@ -1,0 +1,7 @@
+icons:
+- left arrow by vectaicon from flaticon.com
+- user avatar by Becris from flaticon.com
+- search by chehuna from flaticon.com
+- menu by alkhalifi from flaticon.com
+- chat box by Icon Smart from flaticon.com
+- heart by Freepic from flaticon.com

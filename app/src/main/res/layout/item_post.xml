@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageProfile"
+        android:layout_marginVertical="8dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@string/post_profile_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textPostName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/imageProfile"
+        app:layout_constraintTop_toTopOf="@id/imageProfile" />
+
+    <TextView
+        android:id="@+id/textPostUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/textPostName"
+        app:layout_constraintTop_toTopOf="@id/imageProfile" />
+
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/imagePost"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textPostName"
+        app:layout_constraintTop_toBottomOf="@id/textPostName" />
+
+    <ImageView
+        android:id="@+id/imagePost"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginVertical="16dp"
+        android:contentDescription="@string/post_s_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textPostName"
+        app:layout_constraintTop_toBottomOf="@id/textContent" />
+
+    <ImageView
+        android:id="@+id/btnLike"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/like_button"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintStart_toStartOf="@id/textPostName"
+        app:layout_constraintTop_toBottomOf="@id/imagePost" />
+
+    <TextView
+        android:id="@+id/textLikesCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnLike"
+        app:layout_constraintStart_toEndOf="@id/btnLike"
+        app:layout_constraintTop_toTopOf="@id/btnLike" />
+
+    <ImageView
+        android:id="@+id/btnComment"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/post_comment_button"
+        android:src="@drawable/ic_comment"
+        app:layout_constraintBottom_toBottomOf="@id/btnLike"
+        app:layout_constraintStart_toEndOf="@id/textLikesCount"
+        app:layout_constraintTop_toTopOf="@id/btnLike" />
+
+    <TextView
+        android:id="@+id/textCommentsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnComment"
+        app:layout_constraintStart_toEndOf="@id/btnComment"
+        app:layout_constraintTop_toTopOf="@id/btnComment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
