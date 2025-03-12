@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">intro</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="unsubscribe">Unsubscribe</string>
+    <string name="followers">followers</string>
+    <string name="followersCount">141,660</string>
+    <string name="following">following</string>
+    <string name="followingCount">53</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="username">\@username</string>
+    <string name="name">User\'s Name</string>
+    <string name="avatar_image">avatar image</string>
+    <string name="menu_button">menu button</string>
+    <string name="search_button">search button</string>
+    <string name="back_button">back button</string>
+    <string name="header_image">header image</string>
+    <string name="posts">posts</string>
+    <string name="post_profile_image">post profile image</string>
+    <string name="like_button">like</string>
+    <string name="post_s_image">post\'s image</string>
+    <string name="post_comment_button">post comment button</string>
+</resources>
