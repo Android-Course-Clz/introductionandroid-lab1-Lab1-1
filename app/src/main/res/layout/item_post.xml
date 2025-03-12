@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_android_black_24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/name" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        android:layout_marginStart="8dp"/>
+
+    <ImageView
+        android:id="@+id/contentImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="@id/avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <TextView
+        android:id="@+id/contentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="содержание поста"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/contentImage"
+        app:layout_constraintStart_toStartOf="@id/contentImage"
+        android:layout_marginTop="8dp"/>
+
+    <ImageButton
+        android:id="@+id/buttonLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_like"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toBottomOf="@id/contentText"
+        app:layout_constraintStart_toStartOf="@id/contentText"
+        app:layout_constraintEnd_toStartOf="@id/counterLike"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/counterLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20sp"
+        style="bold"
+        app:layout_constraintTop_toTopOf="@id/buttonLike"
+        app:layout_constraintStart_toEndOf="@id/buttonLike"
+        app:layout_constraintEnd_toStartOf="@id/buttonComment"
+        android:layout_marginStart="4dp" />
+
+    <ImageButton
+        android:id="@+id/buttonComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_comment"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/counterLike"
+        app:layout_constraintStart_toEndOf="@id/counterLike"
+        app:layout_constraintEnd_toStartOf="@id/counterComment"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/counterComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20sp"
+        style="bold"
+        app:layout_constraintTop_toTopOf="@id/buttonComment"
+        app:layout_constraintStart_toEndOf="@id/buttonComment"
+        app:layout_constraintEnd_toStartOf="@id/buttonShare"
+        android:layout_marginStart="4dp" />
+
+    <ImageButton
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/counterComment"
+        app:layout_constraintStart_toEndOf="@id/counterComment"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

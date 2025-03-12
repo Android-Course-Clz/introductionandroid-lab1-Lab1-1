@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="user_tag">TAG</string>
+    <string name="subscribe_button">Подписаться</string>
+    <string name="message_button">Написать</string>
+</resources>
