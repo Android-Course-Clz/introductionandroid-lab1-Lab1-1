@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">first_lab</string>
+    <string name="title_posts">Posts</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_chats">Chats</string>
+    <string name="profile_nick_name">volodarmurzin</string>
+    <string name="profile_name_surname">Volodar Murzin</string>
+    <string name="profile_status">Work-work-work - a little bit better. Work-work-work - a little bit better. Work-work-work - success.</string>
+    <string name="profile_detailed_info">Detailed information about user</string>
+    <string name="profile_posts_amount">2</string>
+    <string name="profile_posts">Posts</string>
+    <string name="profile_follows">Follows</string>
+    <string name="profile_follows_amount8">1</string>
+    <string name="profile_followers">Followers</string>
+    <string name="profile_followers_amount">2006</string>
+    <string name="profile_posts_block_title">Posts</string>
+    <string name="default_nickname">Nickname</string>
+    <string name="like">Like</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="comment_send_button">Send</string>
+    <string name="write_a_comment">Write a comment...</string>
+</resources>
