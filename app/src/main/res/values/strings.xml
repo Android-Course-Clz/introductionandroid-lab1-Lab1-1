@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ProfileApp</string>
+    <string name="addFriends">Добавить в друзья</string>
+    <string name="message">Сообщение</string>
+    <string name="other">Ещё</string>
+    <string name="profileName">Даниил Чуб</string>
+    <string name="profileStatus">Был(а) недавно</string>
+    <string name="friendsCount">46</string>
+    <string name="subscribersCount">10</string>
+    <string name="photoCount">3</string>
+</resources>
