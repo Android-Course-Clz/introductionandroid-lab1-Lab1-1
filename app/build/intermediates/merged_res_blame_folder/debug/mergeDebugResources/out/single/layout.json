@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/item_comment.xml",
+        "source": "ru.itmo.socialnetwork.app-main-51:/layout/item_comment.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/profile_info.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/profile_info.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/item_comment.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/item_comment.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/activity_main.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/item_post.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/item_post.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/fragment_first.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/content_main.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/content_main.xml"
+    },
+    {
+        "merged": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-mergeDebugResources-48:/layout/comment_bottom_sheet.xml",
+        "source": "/Users/markhvostenko/.gradle/daemon/8.11.1/ru.itmo.socialnetwork.app-main-51:/layout/comment_bottom_sheet.xml"
+    }
+]
