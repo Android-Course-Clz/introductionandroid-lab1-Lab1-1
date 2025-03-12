@@ -1,16 +1,14 @@
 package com.chtonad0000.profileapp
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.chtonad0000.profileapp.ui.theme.ProfileAppTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -20,6 +18,9 @@ class MainActivity : ComponentActivity() {
         Post(2, "Горы", "https://i.pinimg.com/736x/b3/c1/be/b3c1be4f20985e278e6a47d8718ef9e0.jpg", 5, 1),
         Post(3, "Озеро", "https://i.pinimg.com/736x/bb/71/3d/bb713d5897c65ce91afde1f9732633d0.jpg", 8, 3)
     )
+
+    private var isFriend = false
+    private var friendsCount = 46
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,22 +40,26 @@ class MainActivity : ComponentActivity() {
         adapter = PostAdapter()
         recyclerView.adapter = adapter
         adapter.submitList(posts)
-    }
-}
 
+        val btnAddFriend = findViewById<Button>(R.id.btn_add_friend)
+        val friendsCountText = findViewById<TextView>(R.id.friends_count)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        friendsCountText.text = friendsCount.toString()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProfileAppTheme {
-        Greeting("Android")
+        btnAddFriend.setOnClickListener {
+            isFriend = !isFriend
+
+            if (isFriend) {
+                friendsCount++
+                btnAddFriend.text = "Удалить из друзей"
+                btnAddFriend.isSelected = true
+            } else {
+                friendsCount--
+                btnAddFriend.text = "Добавить в друзья"
+                btnAddFriend.isSelected = false
+            }
+
+            friendsCountText.text = friendsCount.toString()
+        }
     }
 }
