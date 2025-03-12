@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="like">like</string>
+    <string name="init_counter">0</string>
+    <string name="comment">comment</string>
+    <string name="share">share</string>
+    <string name="init_date">31 дек 2017</string>
+    <string name="profile_name_example">Фёдор Головлёв</string>
+    <string name="city_example">Санкт-Петербург</string>
+    <string name="education_example">Университет ИТМО</string>
+    <string name="title_placehodler">Заголовок поста</string>
+    <string name="text_placeholder">Текст поста...</string>
+    <string name="subscribe">Подписаться</string>
+    <string name="write">Написать сообщение</string>
+    <string name="create_post">Создать пост</string>
+    <string name="photo">Фото</string>
+    <string name="video">Видео</string>
+    <string name="music">Музыка</string>
+    <string name="albums">Альбомы</string>
+</resources>
