@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivPostAvatar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/post_avatar"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPostAuthorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivPostAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivPostAvatar" />
+
+    <TextView
+        android:id="@+id/tvPostAuthorNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="#808080"
+        app:layout_constraintStart_toEndOf="@+id/tvPostAuthorName"
+        app:layout_constraintTop_toTopOf="@+id/tvPostAuthorName" />
+
+    <TextView
+        android:id="@+id/tvPostText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPostAuthorName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostAuthorName" />
+
+    <ImageView
+        android:id="@+id/ivPostImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/post_image"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPostText"
+        app:layout_constraintTop_toBottomOf="@+id/tvPostText"
+        tools:minHeight="200dp" />
+
+    <TextView
+        android:id="@+id/tvLikeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:drawablePadding="4dp"
+        app:drawableStartCompat="@drawable/ic_like"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
+
+    <TextView
+        android:id="@+id/tvCommentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#808080"
+        android:textSize="14sp"
+        android:drawablePadding="4dp"
+        app:drawableStartCompat="@drawable/ic_comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPostImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
