@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="followers">Followers</string>
+    <string name="followings">Followings</string>
+    <string name="posts">Posts</string>
+    <string name="btn_follow">Follow</string>
+    <string name="btn_send_message">Send message</string>
+    <string name="btn_followed">Followed</string>
+    <string name="post_image">Post image</string>
+    <string name="author_avatar">author_avatar</string>
+    <string name="like_button">Like</string>
+    <string name="comment_button">Add comment</string>
+</resources>
