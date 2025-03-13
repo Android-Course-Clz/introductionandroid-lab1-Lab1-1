@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/author_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/author_avatar"
+        android:scaleType="centerCrop"
+        android:src="@drawable/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/author_avatar"
+        app:layout_constraintTop_toTopOf="@id/author_avatar" />
+
+    <TextView
+        android:id="@+id/author_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintStart_toEndOf="@id/author_name"
+        app:layout_constraintTop_toTopOf="@id/author_name" />
+
+    <TextView
+        android:id="@+id/post_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/author_name"
+        app:layout_constraintTop_toBottomOf="@id/author_name" />
+
+    <ImageView
+        android:id="@+id/post_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/post_image"
+        android:maxHeight="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="@id/post_text"
+        app:layout_constraintTop_toBottomOf="@id/post_text" />
+
+    <ImageButton
+        android:id="@+id/like_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/like"
+        android:contentDescription="@string/like_button"
+        app:layout_constraintStart_toStartOf="@id/post_image"
+        app:layout_constraintTop_toBottomOf="@id/post_image" />
+
+    <TextView
+        android:id="@+id/likes_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/like_button"
+        app:layout_constraintTop_toTopOf="@id/like_button" />
+
+    <ImageButton
+        android:id="@+id/comments_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/comments"
+        android:contentDescription="@string/comment_button"
+        app:layout_constraintStart_toEndOf="@id/likes_count"
+        app:layout_constraintTop_toTopOf="@id/likes_count" />
+
+    <TextView
+        android:id="@+id/comments_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/comments_button"
+        app:layout_constraintTop_toTopOf="@id/comments_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
