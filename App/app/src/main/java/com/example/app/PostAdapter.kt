@@ -1,19 +1,22 @@
 package com.example.app
 
-import android.R
-import android.R.attr.button
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.app.databinding.MainActivityBinding
 import com.example.app.databinding.PostBinding
 
+interface PostActionListener {
+    fun onPostLike(post: Post)
+    fun onPostComment(post: Post)
+}
 
 class PostDiffUtil(
     private val oldList: List<Post>,
@@ -34,9 +37,8 @@ class PostDiffUtil(
     }
 }
 
-class PostsAdapter : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
-
-    private var onClickListener: OnClickListener? = null
+class PostsAdapter(private val postActionListener: PostActionListener) :
+    RecyclerView.Adapter<PostsAdapter.PostsViewHolder>(), View.OnClickListener {
 
     var data: List<Post> = emptyList()
         set(newValue) {
@@ -46,38 +48,26 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
             postDiffUtilResult.dispatchUpdatesTo(this@PostsAdapter)
         }
 
-    inner class PostsViewHolder(val binding: PostBinding) : RecyclerView.ViewHolder(binding.root) {
-        private lateinit var likeButton: Button
-        private lateinit var commentsButton: Button
-
-        init {
-            likeButton = binding.likesCount
-            commentsButton = binding.commentsCount
-
-            // Setup click listener for button
-            likeButton.setOnClickListener(View.OnClickListener {
-                    var likes = likeButton.text.toString().toInt()
-                    likes += 1
-                    likeButton.text = "${likes}"
-            })
-
-            commentsButton.setOnClickListener(View.OnClickListener {
-                var comments = commentsButton.text.toString().toInt()
-                comments += 1
-                commentsButton.text = "${comments}"
-            })
-        }
-    }
+    inner class PostsViewHolder(val binding: PostBinding) : RecyclerView.ViewHolder(binding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = PostBinding.inflate(inflater, parent, false)
+
+        binding.root.setOnClickListener(this)
+        binding.commentsCount.setOnClickListener(this)
+        binding.likesCount.setOnClickListener(this)
         return PostsViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PostsViewHolder, position: Int) {
         val post = data[position]
+
+        holder.itemView.tag = post
+        holder.binding.likesCount.tag = post
+        holder.binding.commentsCount.tag = post
+
         holder.binding.postText.text = post.text
         holder.binding.likesCount.text = "${post.likes}"
         holder.binding.commentsCount.text = "${post.comments}"
@@ -89,5 +79,14 @@ class PostsAdapter : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    override fun onClick(view: View) {
+        val post: Post = view.tag as Post
+        when (view.id) {
+            R.id.likes_count -> postActionListener.onPostLike(post)
+            R.id.comments_count -> postActionListener.onPostComment(post)
+        }
+
     }
 }

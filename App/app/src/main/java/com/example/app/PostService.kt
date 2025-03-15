@@ -2,9 +2,12 @@ package com.example.app
 
 import java.util.Collections
 
+typealias PostListener = (posts: List<Post>) ->Unit
+
 class PostService {
 
     private var posts = mutableListOf<Post>()
+    private var listeners = mutableListOf<PostListener>()
 
     init {
         posts = (1..50).map {
@@ -39,16 +42,37 @@ class PostService {
     fun getPosts() : List<Post> = posts
 
     fun likePost(post: Post) {
+
         val index = posts.indexOfFirst{ it.id == post.id}
         if (index == -1) return
 
-        posts[index] = Post(post.id, post.name, post.text, post.likes + 1, post.photo, post.comments, post.isLiked)
+        posts = ArrayList(posts)
+        if (post.isLiked) {
+            posts[index] = Post(post.id, post.name, post.text, post.likes - 1, post.photo, post.comments, false)
+        } else {
+            posts[index] = Post(post.id, post.name, post.text, post.likes + 1, post.photo, post.comments, true)
+        }
+        notifyChanges()
     }
 
     fun addComment(post: Post) {
         val index = posts.indexOfFirst{ it.id == post.id}
         if (index == -1) return
 
+        posts = ArrayList(posts)
         posts[index] = Post(post.id, post.name, post.text, post.likes, post.photo, post.comments + 1, post.isLiked)
+        notifyChanges()
     }
+
+    fun addListener(listener: PostListener) {
+        listeners.add(listener)
+        listener.invoke(posts)
+    }
+
+    fun removeListener(listener: PostListener) {
+        listeners.remove(listener)
+        listener.invoke(posts)
+    }
+
+    private fun notifyChanges() = listeners.forEach { it.invoke(posts) }
 }
