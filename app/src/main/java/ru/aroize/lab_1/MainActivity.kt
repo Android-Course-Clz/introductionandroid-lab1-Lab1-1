@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(){
     private lateinit var header: ConstraintLayout
     private lateinit var friends: ConstraintLayout
     private var isSubscribed = false
+    private var isHiddenPosts = true
     private val numOfPosts = 20
 
 
@@ -52,16 +53,18 @@ class MainActivity : AppCompatActivity(){
         friends = findViewById(R.id.friendsLayout)
         showPostsButton = findViewById(R.id.showPostsButton)
         showPostsButton.setOnClickListener{
-            if (showPostsButton.text == getString(R.string.showPosts)) {
-                showPostsButton.text = getString(R.string.hidePosts)
-                backgroundImage.visibility = View.GONE
-                header.visibility = View.GONE
-                friends.visibility = View.GONE
-            } else {
+            if (isHiddenPosts) {
                 showPostsButton.text = getString(R.string.showPosts)
                 backgroundImage.visibility = View.VISIBLE
                 header.visibility = View.VISIBLE
                 friends.visibility = View.VISIBLE
+                isHiddenPosts = false
+            } else {
+                showPostsButton.text = getString(R.string.hidePosts)
+                backgroundImage.visibility = View.GONE
+                header.visibility = View.GONE
+                friends.visibility = View.GONE
+                isHiddenPosts = true
             }
         }
 
