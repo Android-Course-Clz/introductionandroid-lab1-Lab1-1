@@ -12,12 +12,10 @@ class ItemDiffCallback(
     override fun getNewListSize(): Int = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        // Check if the items represent the same object
         return oldList[oldItemPosition].id == newList[newItemPosition].id
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        // Check if the contents of the items are the same
         return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

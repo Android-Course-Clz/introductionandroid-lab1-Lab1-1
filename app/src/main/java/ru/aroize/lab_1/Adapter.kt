@@ -4,14 +4,10 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import ru.aroize.lab_1.R.drawable
+import ru.aroize.lab_1.databinding.ItemPostBinding
 
 class Adapter(private var list: List<Item>) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -22,69 +18,68 @@ class Adapter(private var list: List<Item>) : RecyclerView.Adapter<Adapter.ViewH
         diffResult.dispatchUpdatesTo(this)
     }
 
-    // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // inflates the card_view_design view
-        // that is used to hold list item
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.posts_list, parent, false)
+        val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(binding)
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        val item = list[position]
-
-        Glide.with(holder.postProfilePictureView)
-            .load(item.profilePicture)
-            .placeholder(drawable.comment_button)
-            .error(drawable.like_button_pressed)
-            .into(holder.postProfilePictureView)
-
-        // sets the image to the imageview from our itemHolder class
-        holder.postImageView.setImageResource(item.postImage)
-
-        // sets the text to the textview from our itemHolder class
-        holder.postTitleView.text = item.title
-
-        holder.postLikeButtonView.setOnClickListener{
-            holder.postLikeButtonView.setImageResource(drawable.like_button_pressed)
-            var numOfLikesR = holder.postAmountOfLikesView.text
-            var numOfLikes = numOfLikesR.toString().toInt()
-            numOfLikes++
-            holder.postAmountOfLikesView.text = numOfLikes.toString()
-        }
-
-        holder.postCommentFieldView.visibility = View.GONE
-
-        holder.postCommentButtonView.setOnClickListener{
-            if (holder.postCommentFieldView.visibility == View.GONE) {
-                holder.postCommentFieldView.visibility = View.VISIBLE
-            } else {
-                holder.postCommentFieldView.visibility = View.GONE
-                holder.postAmountOfCommentsView.text = ("1").toString()
-            }
-        }
-
+        holder.bind(list[position])
     }
 
-    // return the number of the items in the list
     override fun getItemCount(): Int {
         return list.size
     }
 
-    // Holds the views for adding it to image and text
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val postProfilePictureView: ImageView = itemView.findViewById(R.id.profilePicture)
-        val postImageView: ImageView = itemView.findViewById(R.id.postPicture)
-        val postTitleView: TextView = itemView.findViewById(R.id.postTitle)
-        val postLikeButtonView: ImageView = itemView.findViewById(R.id.likeButton)
-        val postAmountOfLikesView: TextView = itemView.findViewById(R.id.amountOfLikes)
-        val postCommentButtonView: AppCompatImageView = itemView.findViewById(R.id.commentButton)
-        val postAmountOfCommentsView: TextView = itemView.findViewById(R.id.amountOfComments)
-        val postCommentFieldView: EditText = itemView.findViewById(R.id.commentField)
+    class ViewHolder(private val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Item) {
+            Glide.with(binding.root)
+                .load(item.profilePicture)
+                .placeholder(R.drawable.comment_button)
+                .error(R.drawable.like_button_pressed)
+                .into(binding.profilePicture)
+
+            binding.postPicture.setImageResource(item.postImage)
+
+            binding.postTitle.text = item.title
+
+            binding.amountOfLikes.text = item.amountOfLikes.toString()
+
+            if(item.likePressed) {
+                binding.likeButton.setImageResource(R.drawable.like_button_pressed)
+            } else {
+                binding.likeButton.setImageResource(R.drawable.like_button)
+            }
+            binding.likeButton.setOnClickListener{
+                if(item.likePressed) {
+                    binding.likeButton.setImageResource(R.drawable.like_button)
+                    item.amountOfLikes--
+                    binding.amountOfLikes.text = item.amountOfLikes.toString()
+                    item.likePressed = false
+                } else {
+                    binding.likeButton.setImageResource(R.drawable.like_button_pressed)
+                    item.amountOfLikes++
+                    binding.amountOfLikes.text = item.amountOfLikes.toString()
+                    item.likePressed = true
+                }
+            }
+
+            binding.amountOfComments.text = item.amountOfComments.toString()
+            binding.commentField.setText(item.commentEdit)
+            binding.commentField.visibility = View.GONE
+
+            binding.commentButton.setOnClickListener{
+                if (binding.commentField.visibility == View.GONE) {
+                    binding.commentField.visibility = View.VISIBLE
+                } else {
+                    binding.commentField.visibility = View.GONE
+                    item.amountOfComments = 1
+                    binding.amountOfComments.text = "1"
+                    item.commentEdit = binding.commentField.toString()
+                }
+            }
+        }
     }
 }

@@ -191,7 +191,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/item_background"
-            tools:listitem="@layout/posts_list"
+            tools:listitem="@layout/item_post"
             app:layout_constraintTop_toBottomOf="@+id/amountOfPosts"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

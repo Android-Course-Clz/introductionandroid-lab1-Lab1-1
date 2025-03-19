@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -22,6 +21,7 @@ class MainActivity : AppCompatActivity(){
     private lateinit var backgroundImage: ConstraintLayout
     private lateinit var header: ConstraintLayout
     private lateinit var friends: ConstraintLayout
+    private var isSubscribed = false
     private val numOfPosts = 20
 
 
@@ -38,10 +38,12 @@ class MainActivity : AppCompatActivity(){
 
         subscribeButton = findViewById(R.id.subscribeButton)
         subscribeButton.setOnClickListener{
-            if (subscribeButton.text == getString(R.string.subscribeButtonText)) {
-                subscribeButton.text = getString(R.string.subscribedButtonText)
-            } else {
+            if (isSubscribed) {
                 subscribeButton.text = getString(R.string.subscribeButtonText)
+                isSubscribed = false
+            } else {
+                subscribeButton.text = getString(R.string.subscribedButtonText)
+                isSubscribed = true
             }
         }
 
@@ -63,21 +65,13 @@ class MainActivity : AppCompatActivity(){
             }
         }
 
-
-
-
-        // getting the recyclerview by its id
         val recyclerview: RecyclerView = findViewById(R.id.recyclerview)
 
-        // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
 
 
 
-        // ArrayList of class ItemsViewModel
         val data = ArrayList<Item>()
-        // This loop will create 20 Views containing
-        // the image with the count of view
         var counter = 1
         for (i in 1..numOfPosts) {
             data.add(Item(
@@ -92,10 +86,8 @@ class MainActivity : AppCompatActivity(){
             counter++
         }
 
-        // This will pass the ArrayList to our Adapter
         val adapter = Adapter(data)
 
-        // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
 
         amountOfPosts = findViewById(R.id.amountOfPosts)
@@ -113,9 +105,5 @@ class MainActivity : AppCompatActivity(){
         adapter.updateData(newData)
         amountOfPosts.text = counter.toString() + " постов"
         counter++
-    }
-
-    private companion object {
-        const val LOG_TAG = "IntroLoggingTag"
     }
 }

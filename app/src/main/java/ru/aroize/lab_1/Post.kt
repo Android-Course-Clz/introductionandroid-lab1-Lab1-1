@@ -5,8 +5,8 @@ data class Item(
     val profilePicture: String,
     val postImage: Int,
     val title: String,
-    val commentEdit: String,
-    val amountOfLikes: Int,
-    val likePressed: Boolean,
-    val amountOfComments: Int
+    var commentEdit: String,
+    var amountOfLikes: Int,
+    var likePressed: Boolean,
+    var amountOfComments: Int
 )
