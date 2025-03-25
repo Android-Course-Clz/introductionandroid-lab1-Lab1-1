@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/item_background"
+        android:paddingTop="20dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingBottom="30dp">
+
+        <!-- Profile Header -->
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Post Layout -->
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:textAlignment="center"
+            android:fontFamily="@font/my_custom_font"
+            android:textStyle="bold"
+            android:text="Петя Пупкин"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="@+id/profilePicture"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+            app:layout_constraintStart_toEndOf="@+id/profilePicture"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginLeft="15dp"/>
+
+        <ImageView
+            android:id="@+id/postPicture"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintTop_toBottomOf="@+id/profilePicture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/postTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:textStyle="bold"
+            android:text="Просто красота"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/postPicture"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
+        <ImageView
+            android:id="@+id/likeButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/like_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postTitle"
+            android:layout_marginTop="20dp" />
+        <TextView
+            android:id="@+id/amountOfLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:textStyle="bold"
+            android:text="0"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="@+id/likeButton"
+            app:layout_constraintBottom_toBottomOf="@+id/likeButton"
+            app:layout_constraintStart_toEndOf="@+id/likeButton"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginLeft="15dp" />
+        <ImageView
+            android:id="@+id/commentButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/comment_button"
+            app:layout_constraintStart_toEndOf="@+id/amountOfLikes"
+            app:layout_constraintTop_toBottomOf="@+id/postTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:id="@+id/amountOfComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/first_priority_text"
+            android:fontFamily="@font/my_custom_font"
+            android:textStyle="bold"
+            android:text="0"
+            android:textSize="15sp"
+            app:layout_constraintTop_toTopOf="@+id/commentButton"
+            app:layout_constraintBottom_toBottomOf="@+id/commentButton"
+            app:layout_constraintStart_toEndOf="@+id/commentButton"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginLeft="15dp" />
+        <EditText
+            android:id="@+id/commentField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comment_background"
+            android:textColor="@color/third_priority_text"
+            android:textColorHint="@color/third_priority_text"
+            android:hint="Ваш комментарий..."
+            android:src="@drawable/comment_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/likeButton"
+            android:layout_marginTop="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
