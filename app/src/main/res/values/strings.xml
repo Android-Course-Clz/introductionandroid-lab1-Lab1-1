@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lab1</string>
+    <string name="username">Andrew Pevkin</string>
+    <string name="nickname">\@day_013</string>
+    <string name="fans">24K\nFans</string>
+    <string name="following">655\nFollowing</string>
+    <string name="posts">2129\nPosts</string>
+    <string name="follow">Follow</string>
+    <string name="message">Message</string>
+    <string name="avatar_desc">User Avatar</string>
+    <string name="fab_desc">Create new post</string>
+
+    <string name="post_image_desc">Post Image</string>
+    <string name="post_content">Post content here...</string>
+    <string name="likes_count">300</string>
+    <string name="like_button_desc">Like post</string>
+    <string name="comment_button_desc">Comment on post</string>
+
+</resources>
